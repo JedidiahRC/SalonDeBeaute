@@ -18,32 +18,32 @@ export class AppComponent {
 
   notes:any=[];
 
-  refreshNotes(){
-    this.http.get(this.APIUrl+'GetNotes').subscribe(data=>{
-      this.notes=data;
-    })
-  }
+  // refreshNotes(){
+  //   this.http.get(this.APIUrl+'GetNotes').subscribe(data=>{
+  //     this.notes=data;
+  //   })
+  // }
 
   ngOnInit(){
-    this.refreshNotes();
+    // this.refreshNotes();
   }
 
-  addNotes(){
-    var newNotes=(<HTMLInputElement>document.getElementById("newNotes")).value;
-    var formData=new FormData();
-    formData.append("newNotes",newNotes);
-    this.http.post(this.APIUrl+'AddNotes',formData).subscribe(data=>{
-      alert(data);
-      this.refreshNotes();
-    })
-  }
+  // addNotes(){
+  //   var newNotes=(<HTMLInputElement>document.getElementById("newNotes")).value;
+  //   var formData=new FormData();
+  //   formData.append("newNotes",newNotes);
+  //   this.http.post(this.APIUrl+'AddNotes',formData).subscribe(data=>{
+  //     alert(data);
+  //     this.refreshNotes();
+  //   })
+  // }
 
-  deleteNotes(id:any){
-    this.http.delete(this.APIUrl+'deleteNotes?id='+id).subscribe(data=>{
-      alert(data);
-      this.refreshNotes();
-    })
-  }
+  // deleteNotes(id:any){
+  //   this.http.delete(this.APIUrl+'deleteNotes?id='+id).subscribe(data=>{
+  //     alert(data);
+  //     this.refreshNotes();
+  //   })
+  // }
 
 
 showSignUpForm: boolean = false;

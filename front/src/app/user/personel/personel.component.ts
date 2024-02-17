@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PersonelService } from './personel.service';
 
 @Component({
   selector: 'app-personel',
@@ -9,19 +10,38 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class PersonelComponent implements OnInit {
   signupForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
-
-  ngOnInit(): void {
+  constructor(
+    private fb: FormBuilder,
+    private personelService: PersonelService
+    ) {
     this.signupForm = this.fb.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      phone: ['', Validators.required],
+      gender: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
-  onSubmit() {
+  ngOnInit(): void {
+
+  }
+
+   onSubmit() {
     if (this.signupForm.valid) {
       console.log('Signup Form submitted:', this.signupForm.value);
-      // Add your signup logic here
+      this.personelService.submitForm(this.signupForm.value)
+        .subscribe(
+          response => {
+            console.log('Form submitted successfully!', response);
+            // Optionally, you can reset the form after successful submission
+            this.signupForm.reset();
+          },
+          error => {
+            console.error('Error submitting form:', error);
+          }
+        );
     }
   }
 }

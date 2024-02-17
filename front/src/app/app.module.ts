@@ -8,6 +8,7 @@ import { PersonelComponent } from './user/personel/personel.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
+import { TestsComponent } from './tests/tests.component';
 
 const routes: Routes = [
   { path: 'admin',
@@ -24,7 +25,8 @@ const routes: Routes = [
     AppComponent,
     UserComponent,
     PersonelComponent,
-    AdminComponent
+    AdminComponent,
+    TestsComponent
   ],
   imports: [
     BrowserModule,

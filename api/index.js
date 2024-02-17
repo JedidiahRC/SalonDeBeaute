@@ -1,52 +1,52 @@
-var Express = require("express");
-var Mongoclient = require("mongodb").MongoClient;
-var cors = require("cors");
-const multer = require("multer");
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+const bodyParser = require("body-parser");
 
-var app = Express();
+const app = express();
 app.use(cors());
 
-var CONNECTION_STRING =
-  "mongodb+srv://rabemiarintsoacjedidiah:654321Mongodb@cluster0.rso5g9w.mongodb.net/?retryWrites=true&w=majority";
-
-var DATABASENAME = "todoappdb";
-var database;
-
-app.listen(5038, () => {
-  Mongoclient.connect(CONNECTION_STRING, (error, client) => {
-    if (error) {
-      console.error("Error connecting to MongoDB:", error);
-    } else {
-      database = client.db(DATABASENAME);
-      console.log("MongoDB Connection Successful");
+mongoose
+  .connect(
+    "mongodb+srv://rabemiarintsoacjedidiah:654321Mongodb@cluster0.rso5g9w.mongodb.net/todoappdb",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
     }
-  });
+  )
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.error(err));
+
+const signupSchema = new mongoose.Schema({
+  firstName: String,
+  lastName: String,
+  phone: String,
+  gender: String,
+  email: String,
+  password: String,
 });
 
-app.get("/api/todoapp/getNotes", (request, response) => {
-  database
-    .collection("todoappcollection")
-    .find({})
-    .toArray((error, result) => {
-      response.send(result);
+const Signup = mongoose.model("Signup", signupSchema);
+
+app.use(bodyParser.json());
+
+// Handle POST request to /api/signup
+app.post("/api/signup", (req, res) => {
+  const formData = req.body;
+
+  // Create a new instance of Signup model
+  const newSignup = new Signup(formData);
+
+  // Save the form data to MongoDB
+  newSignup
+    .save()
+    .then(() => {
+      res.status(200).json({ message: "Form submitted successfully!" });
+    })
+    .catch((error) => {
+      res.status(500).json({ error: "Error submitting form to database" });
     });
 });
 
-app.post("/api/todoapp/AddNotes", multer().none(), (request, response) => {
-  database
-    .collection("todoappcollection")
-    .count({}, function (error, numOfDocs) {
-      database.collection("todoappcollection").insertOne({
-        id: numOfDocs.toString(),
-        description: request.body.newNotes,
-      });
-      response.json("Added Successfully");
-    });
-});
-
-app.delete("/api/todoapp/deleteNotes", (request, response) => {
-  database.collection("todoappcollection").deleteOne({
-    id: request.query.id,
-  });
-  response.json("Deleted Successfully");
-});
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
