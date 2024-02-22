@@ -13,6 +13,12 @@ import { LoginComponent } from './login/login.component';
 import { ServicesComponent } from './services/services.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { EmployesComponent } from './employes/employes.component';
+// import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+
+
 
 const routes: Routes = [
   { path: 'admin',
@@ -20,6 +26,8 @@ const routes: Routes = [
   children: [
       { path: 'adduser', component: UserComponent },
       { path: 'loginUser', component: LoginComponent },
+      { path: 'addEmploye', component: EmployesComponent },
+
     ]
 },
   // Add other routes as needed
@@ -33,7 +41,8 @@ const routes: Routes = [
     AdminComponent,
     TestsComponent,
     LoginComponent,
-    ServicesComponent
+    ServicesComponent,
+    EmployesComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +51,9 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     ReactiveFormsModule,
     MatSlideToggleModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatInputModule,
+    FormsModule
   ],
   exports: [
     RouterModule

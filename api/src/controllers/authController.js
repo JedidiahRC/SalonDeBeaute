@@ -1,5 +1,5 @@
 const Signup = require("../models/Signup");
-const bcrypt = require("bcrypt");
+
 
 exports.login = async (req, res) => {
   // console.log(Signup.find());
@@ -32,6 +32,10 @@ exports.login = async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 };
+
+
+
+
 
 exports.getAllUsers = async (req, res) => {
   try {

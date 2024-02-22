@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 
 const signupRoutes = require("./routes/signupRoutes");
 const authRoutes = require("./routes/authRoutes"); // Corrected path
+const employeRoutes = require("./routes/employeRoutes"); // Corrected path
 const cors = require("cors");
 
 app.use(bodyParser.json());
@@ -16,7 +17,7 @@ mongoose
   .connect("mongodb://127.0.0.1:27017/SB")
   .then(() => {
     console.log("connected to Mongodb");
-    app.listen(3200, () => {
+    app.listen(3000, () => {
       console.log("Server is running");
     });
   })
@@ -25,8 +26,7 @@ mongoose
   });
 
 // Routes
-app.use("/api", signupRoutes);
+app.use("/api/addUser", signupRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/employe", employeRoutes);
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
