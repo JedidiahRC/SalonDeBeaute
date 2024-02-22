@@ -9,6 +9,9 @@ import { PersonelService } from './personel.service';
 })
 export class PersonelComponent implements OnInit {
   signupForm!: FormGroup;
+  test : Date = new Date();
+    focus: any;
+    focus1: any;
 
   constructor(
     private fb: FormBuilder,

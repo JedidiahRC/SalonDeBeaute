@@ -1,0 +1,16 @@
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* Adjust this according to your layout */
+}
+
+.form-container {
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(255, 102, 196 ,0.8);
+  padding: 20px;
+  /* Adjust as needed */
+  background-color: #ffffff;
+  /* Adjust as needed */
+}

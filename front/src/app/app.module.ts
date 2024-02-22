@@ -9,12 +9,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { TestsComponent } from './tests/tests.component';
+import { LoginComponent } from './login/login.component';
+import { ServicesComponent } from './services/services.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 const routes: Routes = [
   { path: 'admin',
   component: AdminComponent,
   children: [
-      { path: 'personel', component: PersonelComponent },
+      { path: 'adduser', component: UserComponent },
+      { path: 'loginUser', component: LoginComponent },
     ]
 },
   // Add other routes as needed
@@ -26,14 +31,18 @@ const routes: Routes = [
     UserComponent,
     PersonelComponent,
     AdminComponent,
-    TestsComponent
+    TestsComponent,
+    LoginComponent,
+    ServicesComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     NgbModule,
     RouterModule.forRoot(routes),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSlideToggleModule,
+    BrowserAnimationsModule
   ],
   exports: [
     RouterModule
