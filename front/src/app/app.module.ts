@@ -8,12 +8,26 @@ import { PersonelComponent } from './user/personel/personel.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
+import { TestsComponent } from './tests/tests.component';
+import { LoginComponent } from './login/login.component';
+import { ServicesComponent } from './services/services.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { EmployesComponent } from './employes/employes.component';
+// import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+
+
 
 const routes: Routes = [
   { path: 'admin',
   component: AdminComponent,
   children: [
-      { path: 'personel', component: PersonelComponent },
+      { path: 'adduser', component: UserComponent },
+      { path: 'loginUser', component: LoginComponent },
+      { path: 'addEmploye', component: EmployesComponent },
+
     ]
 },
   // Add other routes as needed
@@ -24,14 +38,22 @@ const routes: Routes = [
     AppComponent,
     UserComponent,
     PersonelComponent,
-    AdminComponent
+    AdminComponent,
+    TestsComponent,
+    LoginComponent,
+    ServicesComponent,
+    EmployesComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     NgbModule,
     RouterModule.forRoot(routes),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSlideToggleModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    FormsModule
   ],
   exports: [
     RouterModule

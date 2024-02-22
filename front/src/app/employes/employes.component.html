@@ -1,0 +1,51 @@
+<p>employes works!</p>
+
+
+
+  
+
+  <div class="form-container">
+
+        <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Name" formControlName="name">
+          </mat-form-field>
+      
+          <mat-form-field class="example-full-width">
+            <input matInput type="email" placeholder="Email" formControlName="email">   
+          </mat-form-field>
+      
+          <mat-form-field class="example-full-width">
+            <input matInput type="password" placeholder="Password" formControlName="password">   
+          </mat-form-field>
+      
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Address" formControlName="adresse">   
+          </mat-form-field>
+      
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Contact" formControlName="contact">   
+          </mat-form-field>
+      
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Specialty" formControlName="specialite">   
+          </mat-form-field>
+      
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Schedule" formControlName="horaire">   
+          </mat-form-field>
+      
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Salary" formControlName="salaire">   
+          </mat-form-field>
+      
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Status" formControlName="statut">   
+          </mat-form-field>
+      
+          <button mat-raised-button color="primary" type="submit">Sign Up</button>
+        </form>
+      </div>
+      
+
+  
