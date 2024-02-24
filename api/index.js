@@ -4,8 +4,8 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
 const signupRoutes = require("./src/routes/signupRoutes");
-const authRoutes = require("./src/routes/authRoutes"); // Corrected path
-const employeRoutes = require("./src/routes/employeRoutes"); // Corrected path
+const authRoutes = require("./src/routes/authRoutes");
+const employeRoutes = require("./src/routes/employeRoutes");
 const cors = require("cors");
 
 app.use(bodyParser.json());
@@ -13,13 +13,18 @@ app.use(bodyParser.json());
 app.use(cors()); // Use cors middleware
 app.options("*", cors());
 
+const PORT = process.env.PORT || 3000;
+
+// mongoose
+// .connect("mongodb://127.0.0.1:27017/SB")
+// .connect(
+//   "mongodb+srv://rabemiarintsoacjedidiah:654321Mongodb@cluster0.rso5g9w.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+// )
 mongoose
-  .connect(
-    "mongodb+srv://rabemiarintsoacjedidiah:654321Mongodb@cluster0.rso5g9w.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-  )
+  .connect(process.env.MONGODB_URI)
   .then(() => {
     console.log("connected to Mongodb");
-    app.listen(3000, () => {
+    app.listen(PORT, () => {
       console.log("Server is running");
     });
   })
