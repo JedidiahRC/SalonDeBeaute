@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 const signupRoutes = require("./src/routes/signupRoutes");
 const authRoutes = require("./src/routes/authRoutes");
@@ -20,6 +21,7 @@ const PORT = process.env.PORT || 3000;
 // .connect(
 //   "mongodb+srv://rabemiarintsoacjedidiah:654321Mongodb@cluster0.rso5g9w.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 // )
+console.log(process.env.MONGODB_URI);
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
