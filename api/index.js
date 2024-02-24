@@ -14,7 +14,9 @@ app.use(cors()); // Use cors middleware
 app.options("*", cors());
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/SB")
+  .connect(
+    "mongodb+srv://rabemiarintsoacjedidiah:654321Mongodb@cluster0.rso5g9w.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+  )
   .then(() => {
     console.log("connected to Mongodb");
     app.listen(3000, () => {
