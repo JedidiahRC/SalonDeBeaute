@@ -28,6 +28,7 @@ const routes: Routes = [
       { path: 'addEmploye', component: EmployesComponent },
       { path: 'addService', component: ServicesComponent },
       { path: 'showpersonel', component: PersonelComponent },
+      { path: 'manehoPersisonelina', component: PersonelComponent },
     ],
   },
   // Add other routes as needed
