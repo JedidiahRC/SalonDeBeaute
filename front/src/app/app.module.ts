@@ -18,19 +18,18 @@ import { EmployesComponent } from './employes/employes.component';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 
-
-
 const routes: Routes = [
-  { path: 'admin',
-  component: AdminComponent,
-  children: [
+  {
+    path: 'admin',
+    component: AdminComponent,
+    children: [
       { path: 'adduser', component: UserComponent },
       { path: 'loginUser', component: LoginComponent },
       { path: 'addEmploye', component: EmployesComponent },
       { path: 'addService', component: ServicesComponent },
-
-    ]
-},
+      { path: 'showpersonel', component: PersonelComponent },
+    ],
+  },
   // Add other routes as needed
 ];
 
@@ -43,7 +42,7 @@ const routes: Routes = [
     TestsComponent,
     LoginComponent,
     ServicesComponent,
-    EmployesComponent
+    EmployesComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,12 +53,10 @@ const routes: Routes = [
     MatSlideToggleModule,
     BrowserAnimationsModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
   ],
-  exports: [
-    RouterModule
-  ],
+  exports: [RouterModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
