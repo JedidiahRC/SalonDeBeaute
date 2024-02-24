@@ -27,7 +27,7 @@ const routes: Routes = [
       { path: 'loginUser', component: LoginComponent },
       { path: 'addEmploye', component: EmployesComponent },
       { path: 'addService', component: ServicesComponent },
-      { path: 'showpersonel', component: PersonelComponent },
+      { path: 'showMe', component: PersonelComponent },
       { path: 'manehoPersisonelina', component: PersonelComponent },
     ],
   },
