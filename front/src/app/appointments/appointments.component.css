@@ -1,0 +1,40 @@
+.mat-form-field-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.mat-form-field-container {
+  margin-bottom: 1rem;
+  /* Optional spacing */
+}
+
+@media only screen and (max-width: 768px) {
+  .mat-form-field-column {
+    flex-direction: row;
+    /* Adjust for smaller screens */
+  }
+}
+
+
+.appointment-container {
+  width: 40%;
+  border-radius: 5px;
+  /* Adjust as desired */
+  box-shadow: 0 0 20px rgba(255, 102, 196, 0.8);
+  /* Adjust as desired */
+  padding: 1rem;
+  /* Adjust as desired */
+  margin-bottom: 1rem;
+  /* Optional spacing */
+}
+
+.mat-form-field input {
+  width: 200px;
+  /* Adjust as needed */
+  height: 40px;
+  /* Adjust as needed */
+  padding: 10px;
+  /* Adjust as needed */
+}
