@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 const signupRoutes = require("./routes/signupRoutes");
 const authRoutes = require("./routes/authRoutes"); // Corrected path
 const employeRoutes = require("./routes/employeRoutes"); // Corrected path
+const serviceRoutes = require('./routes/serviceRoutes')
 const cors = require("cors");
 
 app.use(bodyParser.json());
@@ -29,4 +30,5 @@ mongoose
 app.use("/api/addUser", signupRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/employe", employeRoutes);
+app.use("/api/service", serviceRoutes);
 

@@ -27,6 +27,7 @@ const routes: Routes = [
       { path: 'adduser', component: UserComponent },
       { path: 'loginUser', component: LoginComponent },
       { path: 'addEmploye', component: EmployesComponent },
+      { path: 'addService', component: ServicesComponent },
 
     ]
 },
