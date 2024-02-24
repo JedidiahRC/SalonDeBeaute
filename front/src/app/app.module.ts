@@ -17,30 +17,20 @@ import { EmployesComponent } from './employes/employes.component';
 // import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
-import { AuthErrorDialogComponent } from './auth-error-dialog/auth-error-dialog.component';
-import { MatDialogModule } from '@angular/material/dialog';
-import { AccueilComponent } from './accueil/accueil.component';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { AppointmentsComponent } from './appointments/appointments.component';
-import { MatCardModule } from '@angular/material/card';
-import { MatSelectModule } from '@angular/material/select';
-import { MatSliderModule } from '@angular/material/slider';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
+
+
 
 const routes: Routes = [
-  {
-    path: 'admin',
-    component: AdminComponent,
-    children: [
-      { path: 'accueil', component: AccueilComponent },
-      { path: 'add-user', component: UserComponent },
-      { path: 'login-user', component: LoginComponent },
+  { path: 'admin',
+  component: AdminComponent,
+  children: [
+      { path: 'adduser', component: UserComponent },
+      { path: 'loginUser', component: LoginComponent },
       { path: 'addEmploye', component: EmployesComponent },
-      { path: 'add-appointment', component: AppointmentsComponent },
-    ],
-  },
+      { path: 'addService', component: ServicesComponent },
+
+    ]
+},
   // Add other routes as needed
 ];
 
@@ -53,10 +43,7 @@ const routes: Routes = [
     TestsComponent,
     LoginComponent,
     ServicesComponent,
-    EmployesComponent,
-    AuthErrorDialogComponent,
-    AccueilComponent,
-    AppointmentsComponent,
+    EmployesComponent
   ],
   imports: [
     BrowserModule,
@@ -67,18 +54,12 @@ const routes: Routes = [
     MatSlideToggleModule,
     BrowserAnimationsModule,
     MatInputModule,
-    MatSliderModule,
-    FormsModule,
-    MatButtonModule,
-    MatIconModule,
-    MatDialogModule,
-    MatDatepickerModule,
-    MatCardModule,
-    MatSelectModule,
-    MatNativeDateModule,
+    FormsModule
   ],
-  exports: [RouterModule],
+  exports: [
+    RouterModule
+  ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
