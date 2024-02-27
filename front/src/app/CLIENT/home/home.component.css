@@ -13,7 +13,7 @@ img{
     height:80px;
 }
 .banner{
-    background: url(/assets/images/5.png);
+    background: url(../../../assets/images/5.png);
     width: 100%;
     height: 900px;
     background-size: cover;
@@ -29,4 +29,35 @@ img{
 .btn-navbar1:hover
 .btn-navbar1:active{
     color: #dd66bf;
+}
+.title{
+    margin-top: 250px;
+    font-size: 50px;
+    color: white;
+}
+h1{font-size: 50px;
+    color: white;}
+/* BANNER 2 */
+.h2{
+    font-size: 40px;
+    margin-top: 100px;
+    color: #efc6e3;
+}
+.p2{
+    font-size: 15px;
+    color: rgb(40, 38, 38);
+}
+/* BANNER 3 */
+.banner3{
+    margin-top: 100px;
+}
+.more{
+    margin-top: 50px;
+}
+.sp3{
+    font-size: 40px;
+}
+.img{
+    width: 250px;
+    height: 230px;
 }

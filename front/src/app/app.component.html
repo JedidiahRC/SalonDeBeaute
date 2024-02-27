@@ -1,3 +1,43 @@
- <router-outlet></router-outlet>
-
-<mat-slide-toggle>Toggle me!</mat-slide-toggle>
+<nav class="navbar navbar-expand-lg navbar-dark position-fixed w-100 fond-navbar ">
+  <div class="container">
+      <a class="navbar-brand"><img src="../assets/images/Logo.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="pe-4">
+                  <a class="nav-link active"aria-current="page" routerLink="admin/Home">Home</a>
+                </li>
+                <li class="pe-4">
+                  <a class="nav-link" routerLink="admin/Service">Services</a>
+                </li>
+                <li class="pe-4">
+                  <a class="nav-link" routerLink="admin/Appointment">Appointment</a>
+                </li>
+                <li>
+                  <a class="btn btn-navbar" routerLink="admin/Connexion">SIGN IN/ SIGN UP</a>
+                </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<section class="banner-first">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-8">
+          </div>
+          <div class="col-lg-4 ">
+                  <h1 class="text-main">YOUR BEAUTY,</h1> <h1>OUR PRIORITY</h1>
+                  <button class="btn btn-navbar1" routerLink="admin/Appointment">BOOK APPOINTEMENT</button>     
+          </div>
+      </div>
+  </div>
+</section>
+<section class="banner-second">
+  <div>
+      <h1 class="text-center text-title">WELCOME TO: <span>BEAUTY'FULL</span> </h1>
+      <p class="text-center p2">Improve your body by taking care of it. Beauty'full is one of the best place where you can show your beauty <br> through its many services for taking care of appearance</p>
+  </div>    
+</section>
+<router-outlet></router-outlet>

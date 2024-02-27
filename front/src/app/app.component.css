@@ -1,0 +1,55 @@
+body{
+    margin: 0;
+    background:black;
+}
+span{
+    color: #de4db9;
+}
+.fond-navbar{
+    background-color:  rgb(0, 0, 0, 0.8);
+    height: 100px;
+}
+img{
+    width: 90px;
+    height:80px;
+}
+.banner-first{
+    background: url(../assets/images/5.png);
+    width: 100%;
+    height: 900px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.btn-navbar{
+    color: #dd66bf;
+    border: solid 3px rgb(209, 90, 175);
+}
+.btn-navbar1{
+    width: 200px;
+    height: 50px;
+    border: solid 3px rgb(209, 90, 175);
+    color: white ;
+    transition: 0,5s;
+}
+.btn-navbar1:hover
+.btn-navbar1:active{
+    color: #dd66bf;
+}
+.text-main{
+    margin-top: 250px;
+    font-size: 50px;
+    color: white;
+}
+h1{font-size: 50px;
+    color: white;}
+/* BANNER 2 */
+.text-title{
+    font-size: 40px;
+    margin-top: 100px;
+    color: #efc6e3;
+}
+.p2{
+    font-size: 15px;
+    color: rgb(40, 38, 38);
+}
+

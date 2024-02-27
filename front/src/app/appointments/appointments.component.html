@@ -1,40 +1,27 @@
-<mat-card>
-  <mat-card-content>
-    <h2>Make an Appointment</h2>
-    <div class="appointment-container">
-      <div class="mat-form-field-column">
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Service</mat-label>
-          <mat-select>
-            <mat-option *ngFor="let service of services" [value]="service">{{ service }}</mat-option>
-          </mat-select>
-        </mat-form-field>
-
-        <div class="mat-form-field-column">
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Date</mat-label>
-            <input matInput [matDatepicker]="picker" [min]="today" [matDatepickerFilter]="filterPastDates">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
-
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Appointment Time</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let time of appointmentTimes" [value]="time">{{ time }}</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
+<div class="container">
+  <div class="row">
+      <div class="col-lg-4 offset-lg-4">
+          <form action="" method="POST">
+              <div class="mt-3">
+                  <label for="Services">Service name: </label>
+                  <input type="text" name="Services" id="Services" class="form-control">
+              </div>
+              <div class="mt-3">
+                  <label for="date">Date: </label>
+                  <input type="date" required name="date" class="form-control" id="date">
+              </div>
+              <div class="mt-3">
+                  <label for="AppointmentTime">AppointmentTime: </label>
+                  <input type="AppointmentTime" name="AppointmentTime" id="AppointmentTime" class="form-control">
+              </div>
+              <div class="mt-3">
+                  <label for="employe">Employe Confirmation:</label>
+                  <input type="text" name="employe" id="employe" class="form-control">
+              </div>
+              <div class="mt-3">
+                  <button type="submit" class="btn btn-primary form-control">Book Appointment</button>
+              </div>
+          </form>
       </div>
-
-      <mat-form-field class="mat-form-field-container" appearance="fill">
-        <mat-label>Employee</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let employee of employees" [value]="employee">{{ employee }}</mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <button mat-raised-button color="primary">Book Appointment</button>
-    </div>
-  </mat-card-content>
-</mat-card>
+  </div>
+</div>

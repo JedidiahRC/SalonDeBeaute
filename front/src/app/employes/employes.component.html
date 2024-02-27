@@ -1,4 +1,4 @@
-<p>employes works!</p>
+ <!--<p>employes works!</p>
 
   <div class="form-container">
 
@@ -43,5 +43,85 @@
         </form>
       </div>
       
+    -->
+  <div class="container bg-color">
+    <h1 class="text-center mt-5">ADD EMPLOYED</h1>
+    <div class="centered-container">
+      <div class="form-container">
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
 
-  
+
+        <div class="mb-3">
+          <div class="row">
+            <div class="col">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" formControlName="name" class="form-control" id="name">
+              <div *ngIf="signupForm.get('name')?.errors?.['required'] && signupForm.get('name')?.touched">First
+                Name is required</div>
+            </div>
+            <div class="col">
+              <label for="email" class="form-label">Email</label>
+              <input type="text" formControlName="email" class="form-control" id="email">
+              <div *ngIf="signupForm.get('email')?.errors?.['required'] && signupForm.get('email')?.touched">Last Name
+                is required</div>
+            </div>
+          </div> 
+        </div>
+
+
+        <div class="mb-3">
+          <div class="row">
+            <div class="col">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" formControlName="password" class="form-control" id="password">
+              <div *ngIf="signupForm.get('password')?.errors?.['required'] && signupForm.get('password')?.touched">Password is
+                required</div>
+              <label for="adresse" class="form-label">Adresse</label>
+              <input type="text" formControlName="adresse" class="form-control" id="adresse">
+              <div *ngIf="signupForm.get('adresse')?.errors?.['required'] && signupForm.get('adresse')?.touched">Adresse is
+                required</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="contact" class="form-label">contact</label>
+          <input type="text" formControlName="contact" class="form-control" id="contact">
+          <div *ngIf="signupForm.get('contact')?.errors?.['required'] && signupForm.get('contact')?.touched">Contact is
+            required</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="specialite" class="form-label">specialite</label>
+          <input type="text" formControlName="specialite" class="form-control" id="specialite">
+          <div *ngIf="signupForm.get('specialite')?.errors?.['required'] && signupForm.get('specialite')?.touched">specialite is
+            required</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="horaire" class="form-label">horaire</label>
+          <input type="text" formControlName="horaire" class="form-control" id="horaire">
+          <div *ngIf="signupForm.get('horaire')?.errors?.['required'] && signupForm.get('horaire')?.touched">horaire is
+            required</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="salaire" class="form-label">salaire</label>
+          <input type="text" formControlName="salaire" class="form-control" id="salaire">
+          <div *ngIf="signupForm.get('salaire')?.errors?.['required'] && signupForm.get('salaire')?.touched">salaire is
+            required</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="statut" class="form-label">statut</label>
+          <input type="text" formControlName="statut" class="form-control" id="statut">
+          <div *ngIf="signupForm.get('statut')?.errors?.['required'] && signupForm.get('statut')?.touched">statut is
+            required</div>
+        </div>
+        
+        
+        <button type="submit" [disabled]="signupForm.invalid" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    </div>
+  </div>

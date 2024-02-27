@@ -1,6 +1,21 @@
+.centered-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Adjust this according to your layout */
+}
 .form-container {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding: 20px; /* Adjust padding as needed */
-  }
-  
+  border-radius: 8px;
+  box-shadow: 0 0 60px rgba(255, 102, 196 ,0.8);
+  padding: 20px;
+  /* Adjust as needed */
+  background-color: #ffffff;
+  /* Adjust as needed */
+}
+.bg-color{
+  background-color: rgb(25, 20, 20);
+}
+h1{
+  color: white;
+}

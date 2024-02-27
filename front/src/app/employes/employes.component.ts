@@ -45,6 +45,7 @@ import { EmployeeService } from './employee.service';
 })
 export class EmployesComponent {
   employeeForm !: FormGroup;
+  signupForm!: FormGroup<any>;
 
   constructor(
     private fb: FormBuilder,
