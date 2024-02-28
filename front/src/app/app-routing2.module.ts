@@ -7,22 +7,32 @@ import { LoginComponent } from './login/login.component';
 import { EmployesComponent } from './employes/employes.component';
 import { ServicesComponent } from './services/services.component';
 import { PersonelComponent } from './user/personel/personel.component';
+import { TestsComponent } from './tests/tests.component';
 
 const routes: Routes = [
-  {
-    path: 'admin',
-    component: AdminComponent,
-    children: [
-      { path: 'accueil', component: AccueilComponent },
-      { path: 'adduser', component: UserComponent },
-      { path: 'loginUser', component: LoginComponent },
-      { path: 'addEmploye', component: EmployesComponent },
-      { path: 'addService', component: ServicesComponent },
-      { path: 'showMe', component: PersonelComponent },
-      { path: 'manehoPersisonelina', component: PersonelComponent },
-    ],
-  },
-  // Add other admin routes as needed
+  { path: 'testauth2', component: TestsComponent },
+  // {
+  //   path: 'admin',
+  //   component: AdminComponent,
+  //   children: [
+  //     {
+  //       path: 'Home',
+  //       component: HomeAdminComponent,
+  //     },
+  //     {
+  //       path: 'Service',
+  //       component: ServiceComponent,
+  //     },
+  //     {
+  //       path: 'Connexion',
+  //       component: ConnectionManagerComponent,
+  //     },
+  //     { path: 'add-user', component: UserComponent },
+  //     { path: 'login-user', component: ConnectionComponent },
+  //     { path: 'addEmploye', component: EmployesComponent },
+  //     { path: 'addService', component: ServicesComponent },
+  //   ],
+  // },
 ];
 
 @NgModule({

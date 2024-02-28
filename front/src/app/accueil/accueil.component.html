@@ -1,3 +1,40 @@
-<button mat-stroked-button="primary" (click)="redirectToAppointmentPage()">
-  
-</button>
+<!-- <button
+  mat-stroked-button="primary"
+  (click)="redirectToAppointmentPage()"
+></button> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 offset-lg-4">
+      <form action="" method="POST">
+        <div class="mt-3">
+          <button
+            type="submit"
+            class="btn btn-primary form-control"
+            routerLink="/login-user"
+          >
+            CLIENT
+          </button>
+        </div>
+        <div class="mt-3">
+          <button
+            type="submit"
+            class="btn btn-secondary form-control"
+            routerLink="/"
+          >
+            EMPLOYED
+          </button>
+        </div>
+        <div class="mt-3">
+          <button
+            type="submit"
+            class="btn btn-secondary form-control"
+            routerLink="/"
+          >
+            MANAGER
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

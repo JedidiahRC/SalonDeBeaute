@@ -14,37 +14,45 @@ import { ServicesComponent } from './services/services.component';
 import { PersonelComponent } from './user/personel/personel.component';
 import { HomeComponent } from './CLIENT/home/home.component';
 import { ConnectionComponent } from './CLIENT/connection/connection.component';
+import { ServiceComponent } from './CLIENT/service/service.component';
+import { ClientNavbarComponent } from './CLIENT/navbarClient/client-navbar.component';
 
 const routes: Routes = [
+  { path: 'accueil', component: AccueilComponent },
+  { path: 'add-user', component: UserComponent },
+  { path: 'login-user', component: ConnectionComponent },
+  { path: 'home', component: HomeComponent },
   {
-    path:'Home',
-    component: HomeComponent
-  },
-  {
-    path:'Services',
-    component: ServicesComponent
-  },
-  {
-    path:'Appointment',
-    component: AppointmentComponent
-  },
-  {
-    path:'Connexion',
-    component: ConnectionComponent
-  },
-  {
-    path: 'admin',
-    component: AdminComponent,
+    path: 'client',
+    component: ClientNavbarComponent,
     children: [
-      { path: 'accueil', component: AccueilComponent },
-      { path: 'adduser', component: UserComponent },
-      { path: 'loginUser', component: LoginComponent },
-      { path: 'addEmploye', component: EmployesComponent },
-      { path: 'addService', component: ServicesComponent },
-      { path: 'showMe', component: PersonelComponent },
+      {
+        path: 'home',
+        component: HomeComponent,
+      },
+
+      {
+        path: 'service',
+        component: ServiceComponent,
+      },
+      {
+        path: 'appointment',
+        component: AppointmentComponent,
+      },
+      {
+        path: 'connexion',
+        component: ConnectionComponent,
+      },
+      { path: 'add-user', component: UserComponent },
+      { path: 'login-user', component: ConnectionComponent },
+      // { path: 'addEmploye', component: EmployesComponent },
+      // { path: 'addService', component: ServicesComponent },
     ],
   },
-  { path: '', redirectTo: '/admin', pathMatch: 'full' },
+
+  // Add other routes as needed
+
+  { path: '', redirectTo: '/accueil', pathMatch: 'full' },
   { path: 'tests', component: TestsComponent },
   // { path: 'auth-error', component: AuthErrorDialogComponent },
   // { path: 'appointments', component: AppointmentsComponent },

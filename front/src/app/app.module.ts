@@ -20,52 +20,22 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
-import { HomeComponent } from './CLIENT/home/home.component';
-import { AppointmentComponent } from './CLIENT/appointment/appointment.component';
-import { ConnectionComponent } from './CLIENT/connection/connection.component';
-import { ServiceComponent } from './CLIENT/service/service.component';
-
 
 import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { AppRoutingModule } from './app-routing.module';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
-
-
-
-
-const routes: Routes = [
-  
-  
-  { path: 'admin',
-  component: AdminComponent,
-  children: [
-    {
-      path:'Home',
-      component: HomeComponent
-    },
-
-    {
-      path:'Service',
-      component: ServiceComponent
-    },
-    {
-      path:'Appointment',
-      component: AppointmentComponent
-    },
-    {
-      path:'Connexion',
-      component: ConnectionComponent
-    },
-      { path: 'adduser', component: UserComponent },
-      { path: 'loginUser', component: LoginComponent },
-      { path: 'addEmploye', component: EmployesComponent },
-      { path: 'addService', component: ServicesComponent },
-
-    ]
-},
-  // Add other routes as needed
-];
+import { AuthErrorDialogComponent } from './auth-error-dialog/auth-error-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AccueilComponent } from './accueil/accueil.component';
+import { MatButtonModule } from '@angular/material/button';
+import { AppointmentsComponent } from './appointments/appointments.component';
+import { MatSliderModule } from '@angular/material/slider';
+import { ConnectionComponent } from './CLIENT/connection/connection.component';
+import { ClientNavbarComponent } from './CLIENT/navbarClient/client-navbar.component';
+import { HomeComponent } from './CLIENT/home/home.component';
 
 @NgModule({
   declarations: [
@@ -76,13 +46,19 @@ const routes: Routes = [
     TestsComponent,
     LoginComponent,
     ServicesComponent,
-    EmployesComponent
+    UserComponent,
+    EmployesComponent,
+    AccueilComponent,
+    AuthErrorDialogComponent,
+    ConnectionComponent,
+    HomeComponent,
+    AppointmentsComponent,
+    ClientNavbarComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     NgbModule,
-    RouterModule.forRoot(routes),
     ReactiveFormsModule,
     MatSlideToggleModule,
     BrowserAnimationsModule,
@@ -95,12 +71,15 @@ const routes: Routes = [
     MatSelectModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    AppRoutingModule,
+    MatSliderModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatProgressSpinnerModule,
   ],
-  exports: [
-    RouterModule
-  ],
+  exports: [RouterModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
