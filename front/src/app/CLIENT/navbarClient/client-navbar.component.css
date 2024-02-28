@@ -15,14 +15,7 @@ span {
 img {
   width: 90px;
   height: 80px;
-}
-
-.banner-first {
-  background: url(../../assets/images/5.png);
-  width: 100%;
-  height: 900px;
-  background-size: cover;
-  background-repeat: no-repeat;
+  border-radius: 5px;
 }
 
 .btn-navbar {
@@ -64,8 +57,25 @@ h1 {
   font-size: 15px;
   color: rgb(40, 38, 38);
 }
-
-.container {
-  margin-top: 10% !important;
-  padding: 40px;
+/* Footer */
+.banner-5{
+  margin-top: 100px;
+  background-color: rgb(0, 0, 0);
+  height: 400px;
+}
+.h-5{
+  color:#dd66bf;
+  font-size: 20px;
+}
+li{
+  color:white;
+  font-size: 14px;
+}
+.container-center{
+  margin-top: 100px;
+  color: white;
+}
+.image-footer{
+  width: 50px;
+  height: 30px
 }

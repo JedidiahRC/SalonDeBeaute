@@ -1,18 +1,38 @@
-
-<div class="container">
-    <div class="row">
-        <div class="col-lg-4 offset-lg-4">
-            <form action="" method="POST">
-                <div class="mt-3">
-                    <button type="submit" class="btn btn-primary form-control" routerLink="/">CLIENT</button>
-                </div>
-                <div class="mt-3">
-                    <button type="submit" class="btn btn-secondary form-control" routerLink="/">EMPLOYED</button>
-                </div>
-                <div class="mt-3">
-                    <button type="submit" class="btn btn-secondary form-control" routerLink="/">MANAGER</button>
-                </div>
-            </form>
+<div class="containerWrap bg-color">
+  <div class="centered-container">
+    <h1 style="color: rgba(255, 102, 196, 0.8)">Login</h1>
+    <div class="form-container">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Email address</label
+          >
+          <input
+            type="email"
+            formControlName="email"
+            class="form-control"
+            id="exampleInputEmail1"
+          />
         </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input
+            type="password"
+            formControlName="password"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+        </div>
+        <mat-spinner *ngIf="isLoading" value="accent"></mat-spinner>
+        <button
+          *ngIf="!isLoading"
+          type="submit"
+          [disabled]="loginForm.invalid"
+          class="btn btn-primary"
+        >
+          Login
+        </button>
+      </form>
     </div>
+  </div>
 </div>

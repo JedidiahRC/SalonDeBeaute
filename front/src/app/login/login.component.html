@@ -3,12 +3,38 @@
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1">
+      <input
+        type="email"
+        formControlName="email"
+        class="form-control"
+        id="exampleInputEmail1"
+      />
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1">
+      <input
+        type="password"
+        formControlName="password"
+        class="form-control"
+        id="exampleInputPassword1"
+      />
     </div>
-    <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Login</button>
+    <mat-spinner *ngIf="isLoading" value="accent" class="spinSize"></mat-spinner>
+    <button
+      *ngIf="!isLoading"
+      type="submit"
+      [disabled]="loginForm.invalid"
+      class="btn btn-primary"
+    >
+      Login
+    </button>
+    <button
+    *ngIf="!isLoading"
+    type="submit"
+    [disabled]="loginForm.invalid"
+    class="btn btn-primary"
+  >
+    Register
+  </button>
   </form>
 </div>

@@ -9,42 +9,63 @@ import { AdminComponent } from './admin/admin.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { UserComponent } from './user/user/user.component';
 import { LoginComponent } from './login/login.component';
-import { EmployesComponent } from './employes/employes.component';
-import { ServicesComponent } from './services/services.component';
+import { EmployesComponent } from './MANAGER/employes/employes.component';
+import { ServicesComponent } from './MANAGER/services/services.component';
 import { PersonelComponent } from './user/personel/personel.component';
 import { HomeComponent } from './CLIENT/home/home.component';
 import { ConnectionComponent } from './CLIENT/connection/connection.component';
+import { ServiceComponent } from './CLIENT/service/service.component';
+import { ClientNavbarComponent } from './CLIENT/navbarClient/client-navbar.component';
 
 const routes: Routes = [
+  { path: 'accueil', component: AccueilComponent },
+  { path: 'add-user', component: UserComponent },
+  { path: 'login-user', component: ConnectionComponent },
+  { path: 'home', component: HomeComponent },
   {
-    path:'Home',
-    component: HomeComponent
-  },
-  {
-    path:'Services',
-    component: ServicesComponent
-  },
-  {
-    path:'Appointment',
-    component: AppointmentComponent
-  },
-  {
-    path:'Connexion',
-    component: ConnectionComponent
-  },
-  {
-    path: 'admin',
-    component: AdminComponent,
+    path: 'client',
+    component: ClientNavbarComponent,
     children: [
-      { path: 'accueil', component: AccueilComponent },
-      { path: 'adduser', component: UserComponent },
-      { path: 'loginUser', component: LoginComponent },
-      { path: 'addEmploye', component: EmployesComponent },
-      { path: 'addService', component: ServicesComponent },
-      { path: 'showMe', component: PersonelComponent },
+      {
+        path: 'home',
+        component: HomeComponent,
+      },
+
+      {
+        path: 'service',
+        component: ServiceComponent,
+      },
+      {
+        path: 'appointment',
+        component: AppointmentComponent,
+      },
+      {
+        path: 'connexion',
+        component: ConnectionComponent,
+      },
+      { path: 'add-user', component: UserComponent },
+      { path: 'login-user', component: ConnectionComponent },
+      // { path: 'addService', component: ServicesComponent },
     ],
   },
-  { path: '', redirectTo: '/admin', pathMatch: 'full' },
+   
+  { 
+    path: 'addEmploye', 
+    component: EmployesComponent,
+    children: [
+      {
+        path: 'employes',
+        component: EmployesComponent
+      }
+      ],
+    },
+
+
+
+
+  // Add other routes as needed
+
+  { path: '', redirectTo: '/accueil', pathMatch: 'full' },
   { path: 'tests', component: TestsComponent },
   // { path: 'auth-error', component: AuthErrorDialogComponent },
   // { path: 'appointments', component: AppointmentsComponent },
