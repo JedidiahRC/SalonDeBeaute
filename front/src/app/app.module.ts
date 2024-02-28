@@ -11,7 +11,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { TestsComponent } from './tests/tests.component';
 import { LoginComponent } from './login/login.component';
-import { ServicesComponent } from './services/services.component';
+// import { ServicesComponent } from '.CLIENT/service/service.component';
+import { ServiceComponent } from './CLIENT/service/service.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { EmployesComponent } from './employes/employes.component';
@@ -32,6 +33,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { AccueilComponent } from './accueil/accueil.component';
 import { MatButtonModule } from '@angular/material/button';
 import { AppointmentsComponent } from './appointments/appointments.component';
+import { AppointmentComponent } from './CLIENT/appointment/appointment.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { ConnectionComponent } from './CLIENT/connection/connection.component';
 import { ClientNavbarComponent } from './CLIENT/navbarClient/client-navbar.component';
@@ -45,14 +47,14 @@ import { HomeComponent } from './CLIENT/home/home.component';
     AdminComponent,
     TestsComponent,
     LoginComponent,
-    ServicesComponent,
+    ServiceComponent,
     UserComponent,
     EmployesComponent,
     AccueilComponent,
     AuthErrorDialogComponent,
     ConnectionComponent,
     HomeComponent,
-    AppointmentsComponent,
+    AppointmentComponent,
     ClientNavbarComponent,
   ],
   imports: [
