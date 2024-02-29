@@ -1,3 +1,4 @@
+import { HomeEmployeComponent } from './EMPLOYE/home-employe/home-employe.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -11,11 +12,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { TestsComponent } from './tests/tests.component';
 import { LoginComponent } from './login/login.component';
-// import { ServicesComponent } from '.CLIENT/service/service.component';
+import { ServicesComponent } from './MANAGER/services/services.component';
 import { ServiceComponent } from './CLIENT/service/service.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { EmployesComponent } from './employes/employes.component';
+import { EmployesComponent } from './MANAGER/employes/employes.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
@@ -38,6 +39,12 @@ import { MatSliderModule } from '@angular/material/slider';
 import { ConnectionComponent } from './CLIENT/connection/connection.component';
 import { ClientNavbarComponent } from './CLIENT/navbarClient/client-navbar.component';
 import { HomeComponent } from './CLIENT/home/home.component';
+import { NavbarManagerComponent } from './MANAGER/navbar-manager/navbar-manager.component';
+import { ConnectionManagerComponent } from './MANAGER/connection-manager/connection-manager.component';
+import { HomeManagerComponent } from './MANAGER/home-manager/home-manager.component';
+import { NavbarEmployeComponent } from './EMPLOYE/navbar-employe/navbar-employe.component';
+import { ProfilEmployeComponent } from './EMPLOYE/profil-employe/profil-employe.component';
+import { LoginEmployeComponent } from './EMPLOYE/login-employe/login-employe.component';
 
 @NgModule({
   declarations: [
@@ -54,8 +61,16 @@ import { HomeComponent } from './CLIENT/home/home.component';
     AuthErrorDialogComponent,
     ConnectionComponent,
     HomeComponent,
+    ServicesComponent,
+    NavbarManagerComponent,
     AppointmentComponent,
+    HomeManagerComponent,
+    ConnectionManagerComponent,
     ClientNavbarComponent,
+    HomeEmployeComponent,
+    NavbarEmployeComponent,
+    ProfilEmployeComponent,
+    LoginEmployeComponent,
   ],
   imports: [
     BrowserModule,

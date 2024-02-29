@@ -9,8 +9,8 @@ import { AdminComponent } from './admin/admin.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { UserComponent } from './user/user/user.component';
 import { LoginComponent } from './login/login.component';
-import { EmployesComponent } from './employes/employes.component';
-import { ServicesComponent } from './services/services.component';
+import { EmployesComponent } from './MANAGER/employes/employes.component';
+import { ServicesComponent } from './MANAGER/services/services.component';
 import { PersonelComponent } from './user/personel/personel.component';
 import { HomeComponent } from './CLIENT/home/home.component';
 import { ConnectionComponent } from './CLIENT/connection/connection.component';
@@ -38,10 +38,6 @@ const routes: Routes = [
       {
         path: 'appointment',
         component: AppointmentComponent,
-      },
-      {
-        path: 'connexion',
-        component: ConnectionComponent,
       },
       { path: 'add-user', component: UserComponent },
       { path: 'login-user', component: ConnectionComponent },
