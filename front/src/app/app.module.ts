@@ -28,14 +28,21 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { AppRoutingModule } from './app-routing.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import {
+  NgxMatDatetimePickerModule,
+  NgxMatTimepickerModule,
+} from '@angular-material-components/datetime-picker';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSliderModule } from '@angular/material/slider';
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 
 import { AuthErrorDialogComponent } from './auth-error-dialog/auth-error-dialog.component';
-import { MatDialogModule } from '@angular/material/dialog';
 import { AccueilComponent } from './accueil/accueil.component';
-import { MatButtonModule } from '@angular/material/button';
-import { AppointmentsComponent } from './appointments/appointments.component';
+// import { AppointmentsComponent } from './appointments/appointments.component';
 import { AppointmentComponent } from './CLIENT/appointment/appointment.component';
-import { MatSliderModule } from '@angular/material/slider';
 import { ConnectionComponent } from './CLIENT/connection/connection.component';
 import { ClientNavbarComponent } from './CLIENT/navbarClient/client-navbar.component';
 import { HomeComponent } from './CLIENT/home/home.component';
@@ -90,7 +97,6 @@ import { LoginEmployeComponent } from './EMPLOYE/login-employe/login-employe.com
     MatCardModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
     AppRoutingModule,
@@ -98,6 +104,10 @@ import { LoginEmployeComponent } from './EMPLOYE/login-employe/login-employe.com
     MatDialogModule,
     MatButtonModule,
     MatProgressSpinnerModule,
+    TimepickerModule.forRoot(),
+    NgxMatTimepickerModule,
+    NgxMatDatetimePickerModule,
+    NgxMaterialTimepickerModule,
   ],
   exports: [RouterModule],
   providers: [],

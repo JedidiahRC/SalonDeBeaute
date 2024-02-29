@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { AuthErrorDialogComponent } from '../../auth-error-dialog/auth-error-dialog.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { UserService } from 'src/app/CLIENT/connection/user.service';
+import { UserService } from 'src/app/CLIENT/user.service';
 
 @Component({
   selector: 'app-connection-manager',

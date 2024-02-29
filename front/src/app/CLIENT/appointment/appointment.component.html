@@ -1,27 +1,54 @@
 <div class="container">
-    <div class="row">
-        <div class="col-lg-4 offset-lg-4">
-            <form action="" method="POST">
-                <div class="mt-3">
-                    <label for="Services">Service name: </label>
-                    <input type="text" name="Services" id="Services" class="form-control">
-                </div>
-                <div class="mt-3">
-                    <label for="date">Date: </label>
-                    <input type="date" required name="date" class="form-control" id="date">
-                </div>
-                <div class="mt-3">
-                    <label for="AppointmentTime">AppointmentTime: </label>
-                    <input type="AppointmentTime" name="AppointmentTime" id="AppointmentTime" class="form-control">
-                </div>
-                <div class="mt-3">
-                    <label for="employe">Employe:</label>
-                    <input type="text" name="employe" id="employe" class="form-control">
-                </div>
-                <div class="mt-3">
-                    <button type="submit" class="btn btn-primary form-control">Book Appointment</button>
-                </div>
-            </form>
+  <div class="row">
+    <div class="col-lg-4 offset-lg-4">
+      <form action="" method="POST">
+        <div class="mt-3">
+          <label for="Services">Service name: </label>
+
+          <select name="service" id="service" class="form-control">
+            <option *ngFor="let service of services" [value]="service._id">
+              {{ service.name }}
+            </option>
+          </select>
         </div>
+        <div class="mt-3">
+          <label for="date">Date: </label>
+          <input
+            type="date"
+            required
+            name="date"
+            class="form-control"
+            id="date"
+          />
+        </div>
+        <div class="mt-3">
+          <label for="AppointmentTime">AppointmentTime: </label>
+          <input
+            placeholder="Select time"
+            class="form-control"
+            id="AppointmentTime"
+            name="AppointmentTime"
+            aria-label="Select time"
+            [ngxTimepicker]="fullTime"
+            [format]="24"
+            readonly
+          />
+          <ngx-material-timepicker #fullTime></ngx-material-timepicker>
+        </div>
+        <div class="mt-3">
+          <label for="employe">Employee:</label>
+          <select name="employe" id="employe" class="form-control">
+            <option *ngFor="let employee of employees" [value]="employee._id">
+              {{ employee.name }}
+            </option>
+          </select>
+        </div>
+        <div class="mt-3">
+          <button type="submit" class="btn btn-primary form-control">
+            Book Appointment
+          </button>
+        </div>
+      </form>
     </div>
   </div>
+</div>

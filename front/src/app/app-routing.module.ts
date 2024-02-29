@@ -22,6 +22,7 @@ const routes: Routes = [
   { path: 'add-user', component: UserComponent },
   { path: 'login-user', component: ConnectionComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'appointment', component: AppointmentComponent },
   {
     path: 'client',
     component: ClientNavbarComponent,

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserService } from './user.service';
+import { UserService } from '../user.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AuthErrorDialogComponent } from '../../auth-error-dialog/auth-error-dialog.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -23,8 +23,8 @@ export class ConnectionComponent implements OnInit {
     private dialog: MatDialog
   ) {
     this.loginForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
+      email: ['salon@gmail.com', [Validators.required, Validators.email]],
+      password: ['123456', Validators.required],
     });
   }
 

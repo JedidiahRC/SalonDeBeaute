@@ -10,6 +10,7 @@
           <input
             type="email"
             formControlName="email"
+            value="salon@gmail.com"
             class="form-control"
             id="exampleInputEmail1"
           />
@@ -19,25 +20,28 @@
           <input
             type="password"
             formControlName="password"
+            value="123456"
             class="form-control"
             id="exampleInputPassword1"
           />
         </div>
-        <mat-spinner
-          diameter="25"
-          *ngIf="isLoading"
-          color="white"
-        ></mat-spinner>
+
+        <!-- *ngIf="!isLoading" -->
         <button
-          *ngIf="!isLoading"
           type="submit"
           [disabled]="loginForm.invalid"
           class="btn btn-sm btn-primary"
           style="height: 40px; /* Adjust as needed */"
         >
-          Login
+          <div class="row">
+            <div class="col">Login</div>
+            <div class="col" *ngIf="isLoading">
+              <mat-spinner diameter="25"></mat-spinner>
+            </div>
+          </div>
         </button>
       </form>
+      <a class="btn btn-navbar" routerLink="/add-user">SIGN UP</a>
     </div>
   </div>
 </div>
