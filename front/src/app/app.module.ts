@@ -77,11 +77,7 @@ import { LoginEmployeComponent } from './EMPLOYE/login-employe/login-employe.com
     HomeEmployeComponent,
     NavbarEmployeComponent,
     ProfilEmployeComponent,
-<<<<<<< Updated upstream
     LoginEmployeComponent,
-=======
-    LoginEmployeComponent
->>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,

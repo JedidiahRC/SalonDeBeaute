@@ -15,8 +15,6 @@ exports.createService = async (req, res) => {
   }
 };
 
-const Service = require("../models/Services"); // Assuming your model file is in the "models" directory
-
 exports.getAllServices = async (req, res) => {
   try {
     const services = await Service.find();
