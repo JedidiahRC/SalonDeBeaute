@@ -10,6 +10,7 @@ import { serviceService } from './service.service';
 })
 export class ServicesComponent {
   servicesForm !: FormGroup;
+  submitted: boolean | undefined;
 
   constructor(
     private fb: FormBuilder,
@@ -22,13 +23,15 @@ export class ServicesComponent {
   createForm() {
     this.servicesForm = this.fb.group({
       name: ['', Validators.required],
-      price: ['', [Validators.required, Validators.email]],
+      price: ['', [Validators.required]],
       duration: ['', Validators.required],
+      comission: ['', Validators.required],
     });
   }
 
 
 onSubmit() {
+  console.log(this.servicesForm.value)
   if (this.servicesForm.valid) {
     console.log('Signup Form submitted:', this.servicesForm.value);
     this.serviceService.submitForm(this.servicesForm.value)
@@ -41,5 +44,10 @@ onSubmit() {
         }
       );
   }
+
+
+  this.submitted = true;
+
+
 }
 }

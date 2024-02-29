@@ -10,6 +10,7 @@ const setupRoutes2 = require("./routes2");
 const signupRoutes = require("./src/routes/signupRoutes");
 const authRoutes = require("./src/routes/authRoutes");
 const employeRoutes = require("./src/routes/employeRoutes");
+const serviceRoutes = require("./src/routes/serviceRoutes");
 const cors = require("cors");
 
 app.use(bodyParser.json());

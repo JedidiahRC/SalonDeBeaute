@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const serviceSchema = new Schema({
+const serviceSchema = new mongoose.Schema({
     name:{
         type:String,
         required:true
@@ -10,6 +10,10 @@ const serviceSchema = new Schema({
         required:true
     },
     duration:{
+        type:Number,
+        required:true
+    },
+    comission:{
         type:Number,
         required:true
     }

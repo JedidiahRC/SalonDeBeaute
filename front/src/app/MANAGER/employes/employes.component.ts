@@ -75,7 +75,9 @@ export class EmployesComponent {
 
 
 onSubmit() {
-  if (this.employeeForm.valid) {
+ 
+  
+
     console.log('Signup Form submitted:', this.employeeForm.value);
     this.employeeService.submitForm(this.employeeForm.value)
       .subscribe(
@@ -88,7 +90,6 @@ onSubmit() {
           console.error('Error submitting form:', error);
         }
       );
-  }
 }}
 
 
