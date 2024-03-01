@@ -32,26 +32,35 @@
 //   }
 // }
 
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EmployeeService } from './employee.service';
-import { Router } from '@angular/router';
+import { UserService } from 'src/app/CLIENT/user.service';
 
 @Component({
   selector: 'app-employee-form',
   templateUrl: './employes.component.html',
   styleUrls: ['./employes.component.css'],
 })
-export class EmployesComponent {
-  employeeForm!: FormGroup;
+export class EmployesComponent implements OnInit {
+  employeeForm !: FormGroup;
   signupForm!: FormGroup<any>;
+  services: any[] = [];
 
+
+  ngOnInit(): void {
+    this.fetchServices();
+  }
+
+  
   constructor(
     private fb: FormBuilder,
-    private router: Router,
-    private employeeService: EmployeeService
-  ) {
-    this.createForm();
+    private employeeService: EmployeeService,
+    private userService: UserService
+    ) {
+
+  this.createForm();
+  
   }
 
   createForm() {
@@ -69,18 +78,41 @@ export class EmployesComponent {
     });
   }
 
-  onSubmit() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+onSubmit() {
+ 
     console.log('Signup Form submitted:', this.employeeForm.value);
-    this.employeeService.submitForm(this.employeeForm.value).subscribe(
-      (response) => {
-        console.log('Form submitted successfully!', response);
-        // Optionally, you can reset the form after successful submission
-        // this.employeeForm.reset();
-        this.router.navigate(['/client/home']);
-      },
-      (error) => {
-        console.error('Error submitting form:', error);
-      }
-    );
-  }
+    this.employeeService.submitForm(this.employeeForm.value)
+      .subscribe(
+        response => {
+          console.log('Form submitted successfully!', response);
+          // Optionally, you can reset the form after successful submission
+          // this.employeeForm.reset();
+        },
+        error => {
+          console.error('Error submitting form:', error);
+        }
+      );
 }
+
+fetchServices() {
+  this.userService.fetchServices().subscribe((data) => {
+    this.services = data;
+  });
+}
+
+}
+
+

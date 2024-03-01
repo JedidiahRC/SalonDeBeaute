@@ -1,4 +1,5 @@
 const Appointment = require("../models/Appointments");
+const nodemailer = require('nodemailer');
 
 exports.createAppointment = async (req, res) => {
   console.log("Launching saveAppointment");
@@ -18,6 +19,47 @@ exports.createAppointment = async (req, res) => {
       clientName: req.body.clientName,
       clientEmail: req.body.clientEmail,
     });
+
+
+   const transporter = nodemailer.createTransport({
+   service: "gmail",
+   auth: {
+      user: "andryanony08@gmail.com",
+      pass: "jqupfetjgjtuxnju",
+  },
+});
+
+const { service, price, appointmentTime, duration, employe } = req.body;
+const clientName = req.body.clientName;
+const clientEmail = req.body.clientEmail;
+
+const mailOptions = {
+  from: "andryanony08@gmail.com",
+  to: clientEmail,
+  subject: `Good Morning Mrs.M. ${clientName}, these are your appointment details at Beauty'full Beauty Salon`,
+  text: `
+    The service you have choosen: ${service}
+    Price of it: ${price} MGA
+    Your Appointment Time: ${appointmentTime}
+    Duration of it: ${duration} h
+    The employee you have choosen: ${employe}
+  `,
+};
+
+transporter.sendMail(mailOptions, function(error, info) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log("Email sent: " + info.response);
+  }
+});
+
+
+
+
+
+    console.log(req.body.clientEmail)
+    
     console.log("saving appointments");
     const savedAppointment = await appointment.save();
     res.status(201).json(savedAppointment);

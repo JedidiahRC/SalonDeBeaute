@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const nodemailer = require("nodemailer");
 require("dotenv").config();
 
 const setupRoutes1 = require("./routes1");
@@ -12,6 +13,7 @@ const authRoutes = require("./src/routes/authRoutes");
 const employeRoutes = require("./src/routes/employeRoutes");
 const serviceRoutes = require("./src/routes/serviceRoutes");
 const cors = require("cors");
+const Employes = require("./src/models/Employes");
 
 app.use(bodyParser.json());
 
@@ -41,3 +43,28 @@ mongoose
 // Routes
 setupRoutes1(app);
 setupRoutes2(app);
+
+
+
+
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: "andryanony08@gmail.com",
+    pass: "jqupfetjgjtuxnju",
+  },
+});
+
+  const mailOptions = {
+  from: "andryanony08@gmail.com",
+  to: "rabemiarintsoa@gmail.com",
+  text:"Nosokafany"
+
+  };
+transporter.sendMail(mailOptions, function(error, info){
+  if(error){
+    console.log(error);
+  }else{
+    console.log("Email sent: " + info.response);
+  }
+});
