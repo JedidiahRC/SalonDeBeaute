@@ -1,8 +1,8 @@
 .centered-container {
-    margin-top: 50px;
+    /* margin-top: 50px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     /* Adjust this according to your layout */
   }
   .form-container {
@@ -19,3 +19,14 @@
   h1{
     color: white;
   }
+
+    .containerWrap {
+      width: 100%;
+      /* height: 100vh; */
+      /* border-radius: 8px !important; */
+      margin: 0px;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }

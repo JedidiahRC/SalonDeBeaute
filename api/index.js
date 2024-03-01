@@ -43,28 +43,3 @@ mongoose
 // Routes
 setupRoutes1(app);
 setupRoutes2(app);
-
-
-
-
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: "andryanony08@gmail.com",
-    pass: "jqupfetjgjtuxnju",
-  },
-});
-
-  const mailOptions = {
-  from: "andryanony08@gmail.com",
-  to: "rabemiarintsoa@gmail.com",
-  text:"Nosokafany"
-
-  };
-transporter.sendMail(mailOptions, function(error, info){
-  if(error){
-    console.log(error);
-  }else{
-    console.log("Email sent: " + info.response);
-  }
-});

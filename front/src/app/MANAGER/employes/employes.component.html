@@ -37,7 +37,6 @@
             </div>
           </div>
 
-<<<<<<< Updated upstream
           <div class="mb-3">
             <div class="row">
               <div class="col">
@@ -68,7 +67,6 @@
               </div>
             </div>
           </div>
-
           <div class="mb-3">
             <label for="contact" class="form-label">contact</label>
             <input
@@ -83,51 +81,18 @@
               Contact is required
             </div>
           </div>
-=======
-        <div class="mb-3">
-          <label for="contact" class="form-label">contact</label>
-          <input type="text" formControlName="contact" class="form-control" id="contact">
-          <div *ngIf="employeeForm.get('contact')?.errors?.['required'] && employeeForm.get('contact')?.touched">Contact is
-            required</div>
-        </div>
-        
-        <div class="mb-3">
-          <label for="specialite" class="form-label">specialite</label>
-          <select name="service"  formControlName="specialite" id="service" class="form-select">
-            <option *ngFor="let service of services" [value]="service.name">
-              {{ service.name }}
-            </option>
-          </select>
-     <div *ngIf="employeeForm.get('specialite')?.errors?.['required'] && employeeForm.get('specialite')?.touched">specialite is
-      required</div>
-       </div>
-
-        <div class="mb-3">
-          <label for="horaire" class="form-label">horaire de travail</label>
-          <select formControlName="horaire" class="form-select" id="horaire">
-            <option>7:30 - 15:30</option>
-            <option>8:00 - 16:00</option>
-            <option>9:00 - 17:00</option>
-            <option>11:00 - 19:00</option>
-            <option>14:00 - 21:00</option>
-          </select>
-
-          <div *ngIf="employeeForm.get('horaire')?.errors?.['required'] && employeeForm.get('horaire')?.touched">horaire is
-            required</div>
-        </div>
->>>>>>> Stashed changes
 
           <div class="mb-3">
             <label for="specialite" class="form-label">specialite</label>
             <select
+              name="service"
               formControlName="specialite"
+              id="service"
               class="form-select"
-              id="specialite"
             >
-              <option value="Skin care">Skin care</option>
-              <option value="Hair">Hair</option>
-              <option value="Nail care">Nail care</option>
-              <option value="Massage">Massage</option>
+              <option *ngFor="let service of services" [value]="service.name">
+                {{ service.name }}
+              </option>
             </select>
             <div
               *ngIf="employeeForm.get('specialite')?.errors?.['required'] && employeeForm.get('specialite')?.touched"
@@ -137,13 +102,15 @@
           </div>
 
           <div class="mb-3">
-            <label for="horaire" class="form-label">horaire</label>
-            <input
-              type="text"
-              formControlName="horaire"
-              class="form-control"
-              id="horaire"
-            />
+            <label for="horaire" class="form-label">horaire de travail</label>
+            <select formControlName="horaire" class="form-select" id="horaire">
+              <option>7:30 - 15:30</option>
+              <option>8:00 - 16:00</option>
+              <option>9:00 - 17:00</option>
+              <option>11:00 - 19:00</option>
+              <option>14:00 - 21:00</option>
+            </select>
+
             <div
               *ngIf="employeeForm.get('horaire')?.errors?.['required'] && employeeForm.get('horaire')?.touched"
             >

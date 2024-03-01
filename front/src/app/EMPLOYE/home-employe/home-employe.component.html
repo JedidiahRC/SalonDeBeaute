@@ -1,30 +1,33 @@
 <div class="form-container">
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Service</th>
-        <th>Date</th>
-        <th>Appointment Time</th>
-        <th>Client name</th>
-        <th>Client e-mail</th>
-        <th>Employee Name</th>
-        <th>Note</th>
-        <th>Price</th>
-        <th>Duration</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let appointment of appointmentHistory">
-        <td>{{ appointment.service }}</td>
-        <td>{{ appointment.date | date : "dd-MM-yyyy" : "en-US" }}</td>
-        <td>{{ appointment.appointmentTime }}</td>
-        <td>{{ appointment.clientName }}</td>
-        <td>{{ appointment.clientEmail }}</td>
-        <td>{{ appointment.employeeName }}</td>
-        <td>{{ appointment.note }}</td>
-        <td>{{ appointment.price }}</td>
-        <td>{{ appointment.duration }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="container" style="height: 300px; overflow-y: auto">
+    <h2>Appointment History</h2>
+    <table class="table table-striped col-12">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Date</th>
+          <th>Appointment Time</th>
+          <th>Client name</th>
+          <th>Client e-mail</th>
+          <th>Employee Name</th>
+          <th>Note</th>
+          <th>Price</th>
+          <th>Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let appointment of appointmentHistory">
+          <td>{{ appointment.service }}</td>
+          <td>{{ appointment.date | date : "dd-MM-yyyy" : "en-US" }}</td>
+          <td>{{ appointment.appointmentTime }}</td>
+          <td>{{ appointment.clientName }}</td>
+          <td>{{ appointment.clientEmail }}</td>
+          <td>{{ appointment.employeeName }}</td>
+          <td>{{ appointment.note }}</td>
+          <td>{{ appointment.price }}</td>
+          <td>{{ appointment.duration }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

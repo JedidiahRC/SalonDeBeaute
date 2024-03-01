@@ -1,51 +1,74 @@
-<div class="container bg-color">
-  <h1 class="text-center mt-5">ADD SERVICES</h1>
+<div class="containerWrap bg-color">
   <div class="centered-container">
-    <div class="form-container">
-      <form [formGroup]="servicesForm" (ngSubmit)="onSubmit()">
-        <div class="mb-3">
-          <label for="name" class="form-label">Services Name</label>
-          <input type="text" formControlName="name" class="form-control" id="name">
-          <div *ngIf="servicesForm.get('name')?.errors?.['required'] && servicesForm.get('name')?.touched">Services is
-            required</div>
-        </div>
-        <div class="mb-3">
-          <label for="price" class="form-label">price</label>
-          <input type="text" formControlName="price" class="form-control" id="price">
-          <div *ngIf="servicesForm.get('price')?.errors?.['required'] && servicesForm.get('price')?.touched">price is
-            required</div>
-        </div>
-        <div class="mb-3">
-          <label for="duration" class="form-label">duration</label>
-          <input type="text" formControlName="duration" class="form-control" id="duration">
-          <div *ngIf="servicesForm.get('duration')?.errors?.['required'] && servicesForm.get('duration')?.touched">
-            duration is
-            required</div>
-        </div>
-       
-        <div class="mb-3">
-          <label for="comission" class="form-label">Comission</label>
-          <select formControlName="comission" class="form-select" id="comission">
-            <option value="20">20%</option>
-            <option value="30">30%</option>
-            <option value="40">40%</option>
-            <option value="50">50%</option>
-          </select>
-          <div *ngIf="servicesForm.get('comission')?.errors?.['required'] && servicesForm.get('comisssion')?.touched">comission is
-            required</div>
-        </div>
+    <h1 class="text-center mt-5">ADD SERVICES</h1>
+    <div class="centered-container">
+      <div class="form-container">
+        <form [formGroup]="servicesForm" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label for="name" class="form-label">Services Name</label>
+            <input
+              type="text"
+              formControlName="name"
+              class="form-control"
+              id="name"
+            />
+            <div
+              *ngIf="servicesForm.get('name')?.errors?.['required'] && servicesForm.get('name')?.touched"
+            >
+              Services is required
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="price" class="form-label">price</label>
+            <input
+              type="text"
+              formControlName="price"
+              class="form-control"
+              id="price"
+            />
+            <div
+              *ngIf="servicesForm.get('price')?.errors?.['required'] && servicesForm.get('price')?.touched"
+            >
+              price is required
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="duration" class="form-label">duration</label>
+            <input
+              type="text"
+              formControlName="duration"
+              class="form-control"
+              id="duration"
+            />
+            <div
+              *ngIf="servicesForm.get('duration')?.errors?.['required'] && servicesForm.get('duration')?.touched"
+            >
+              duration is required
+            </div>
+          </div>
 
+          <div class="mb-3">
+            <label for="comission" class="form-label">Comission</label>
+            <select
+              formControlName="comission"
+              class="form-select"
+              id="comission"
+            >
+              <option value="20">20%</option>
+              <option value="30">30%</option>
+              <option value="40">40%</option>
+              <option value="50">50%</option>
+            </select>
+            <div
+              *ngIf="servicesForm.get('comission')?.errors?.['required'] && servicesForm.get('comisssion')?.touched"
+            >
+              comission is required
+            </div>
+          </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
     </div>
   </div>
-</div>
-
-<div *ngIf="submitted">
-  <h2>Entered Values:</h2>
-  <p>Service Name: {{ servicesForm.value.name }}</p>
-  <p>Price: {{ servicesForm.value.price }}</p>
-  <p>Duration: {{ servicesForm.value.duration }}</p>
-  <p>Comission: {{ servicesForm.value.comission }}</p>
 </div>

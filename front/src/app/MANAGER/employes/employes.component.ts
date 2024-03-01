@@ -43,24 +43,20 @@ import { UserService } from 'src/app/CLIENT/user.service';
   styleUrls: ['./employes.component.css'],
 })
 export class EmployesComponent implements OnInit {
-  employeeForm !: FormGroup;
+  employeeForm!: FormGroup;
   signupForm!: FormGroup<any>;
   services: any[] = [];
-
 
   ngOnInit(): void {
     this.fetchServices();
   }
 
-  
   constructor(
     private fb: FormBuilder,
     private employeeService: EmployeeService,
     private userService: UserService
-    ) {
-
-  this.createForm();
-  
+  ) {
+    this.createForm();
   }
 
   createForm() {
@@ -78,41 +74,24 @@ export class EmployesComponent implements OnInit {
     });
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-onSubmit() {
- 
+  onSubmit() {
     console.log('Signup Form submitted:', this.employeeForm.value);
-    this.employeeService.submitForm(this.employeeForm.value)
-      .subscribe(
-        response => {
-          console.log('Form submitted successfully!', response);
-          // Optionally, you can reset the form after successful submission
-          // this.employeeForm.reset();
-        },
-        error => {
-          console.error('Error submitting form:', error);
-        }
-      );
+    this.employeeService.submitForm(this.employeeForm.value).subscribe(
+      (response) => {
+        console.log('Form submitted successfully!', response);
+        // Optionally, you can reset the form after successful submission
+        this.employeeForm.reset();
+        alert('Employee added');
+      },
+      (error) => {
+        console.error('Error submitting form:', error);
+      }
+    );
+  }
+
+  fetchServices() {
+    this.userService.fetchServices().subscribe((data) => {
+      this.services = data;
+    });
+  }
 }
-
-fetchServices() {
-  this.userService.fetchServices().subscribe((data) => {
-    this.services = data;
-  });
-}
-
-}
-
-
