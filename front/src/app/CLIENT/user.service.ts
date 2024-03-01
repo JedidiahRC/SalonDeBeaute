@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-
+import { environment } from '../../environment/environment.prod';
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  private baseUrl = 'http://127.0.0.1:3000/api';
+  private baseUrl = environment.backendUrl;
   employees: any[] = [];
 
   constructor(private http: HttpClient) {}

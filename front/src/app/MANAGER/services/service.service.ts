@@ -2,15 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Service } from './service.model';
+import { environment } from 'src/environment/environment.prod';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class serviceService {
-  private baseUrl = 'http://localhost:3000/api/service/addService'; // Update with your backend URL
+  private url = environment.backendUrl;
+  private baseUrl = `${this.url}/service/addService`; // Update with your backend URL
 
-  constructor(private http: HttpClient) { }
-
+  constructor(private http: HttpClient) {}
 
   submitForm(formData: any): Observable<any> {
     return this.http.post<any>(this.baseUrl, formData);
