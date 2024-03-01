@@ -37,6 +37,7 @@ export class ConnectionComponent implements OnInit {
         (response) => {
           this.isLoading = false;
           console.log('Login successful!', response);
+          localStorage.setItem('userId', response.user._id);
           this.router.navigate(['/client/home']);
         },
         (error) => {

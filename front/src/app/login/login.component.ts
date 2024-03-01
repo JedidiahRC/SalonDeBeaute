@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
         (response) => {
           this.isLoading = false;
           console.log('Login successful!', response);
+          localStorage.setItem('userId', response._id);
           this.router.navigate(['/admin/accueil']);
         },
         (error) => {

@@ -23,8 +23,8 @@ export class ConnectionManagerComponent implements OnInit {
     private dialog: MatDialog
   ) {
     this.loginForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
+      email: ['admin@gmail.com', [Validators.required, Validators.email]],
+      password: ['123456', Validators.required],
     });
   }
 
@@ -33,11 +33,11 @@ export class ConnectionManagerComponent implements OnInit {
   onSubmit() {
     this.isLoading = true;
     if (this.loginForm.valid) {
-      this.userService.login(this.loginForm.value).subscribe(
+      this.userService.loginManager(this.loginForm.value).subscribe(
         (response) => {
           this.isLoading = false;
           console.log('Login successful!', response);
-          this.router.navigate(['/client/home']);
+          this.router.navigate(['/manager/dashboard']);
         },
         (error) => {
           this.isLoading = false;

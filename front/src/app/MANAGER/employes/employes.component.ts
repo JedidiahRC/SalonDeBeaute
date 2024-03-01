@@ -9,8 +9,6 @@
 
 // }
 
-
-
 // import { Component, OnInit } from '@angular/core';
 // import { EmployeeService } from './employee.service';
 // import { Employe } from './employe.model';
@@ -37,23 +35,23 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EmployeeService } from './employee.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-form',
   templateUrl: './employes.component.html',
-  styleUrls: ['./employes.component.css']
+  styleUrls: ['./employes.component.css'],
 })
 export class EmployesComponent {
-  employeeForm !: FormGroup;
+  employeeForm!: FormGroup;
   signupForm!: FormGroup<any>;
 
   constructor(
     private fb: FormBuilder,
+    private router: Router,
     private employeeService: EmployeeService
-    ) {
-
-  this.createForm();
-  
+  ) {
+    this.createForm();
   }
 
   createForm() {
@@ -67,29 +65,22 @@ export class EmployesComponent {
       horaire: ['', Validators.required],
       salaire: [null, Validators.required],
       statut: ['', Validators.required],
-      is_admin: [0, Validators.required] // Assuming default value is 0
+      is_admin: [0, Validators.required], // Assuming default value is 0
     });
   }
 
-
-
-
-onSubmit() {
- 
-  
-
+  onSubmit() {
     console.log('Signup Form submitted:', this.employeeForm.value);
-    this.employeeService.submitForm(this.employeeForm.value)
-      .subscribe(
-        response => {
-          console.log('Form submitted successfully!', response);
-          // Optionally, you can reset the form after successful submission
-          // this.employeeForm.reset();
-        },
-        error => {
-          console.error('Error submitting form:', error);
-        }
-      );
-}}
-
-
+    this.employeeService.submitForm(this.employeeForm.value).subscribe(
+      (response) => {
+        console.log('Form submitted successfully!', response);
+        // Optionally, you can reset the form after successful submission
+        // this.employeeForm.reset();
+        this.router.navigate(['/client/home']);
+      },
+      (error) => {
+        console.error('Error submitting form:', error);
+      }
+    );
+  }
+}

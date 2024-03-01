@@ -52,6 +52,7 @@ import { HomeManagerComponent } from './MANAGER/home-manager/home-manager.compon
 import { NavbarEmployeComponent } from './EMPLOYE/navbar-employe/navbar-employe.component';
 import { ProfilEmployeComponent } from './EMPLOYE/profil-employe/profil-employe.component';
 import { LoginEmployeComponent } from './EMPLOYE/login-employe/login-employe.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -104,6 +105,7 @@ import { LoginEmployeComponent } from './EMPLOYE/login-employe/login-employe.com
     NgxMatTimepickerModule,
     NgxMatDatetimePickerModule,
     NgxMaterialTimepickerModule,
+    NgxSpinnerModule,
   ],
   exports: [RouterModule],
   providers: [],

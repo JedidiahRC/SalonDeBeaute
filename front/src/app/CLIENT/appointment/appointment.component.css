@@ -1,0 +1,53 @@
+.containerWrap {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px !important;
+  margin: 5px;
+  padding: 20px;
+  justify-content: center;
+  /* display: flex;
+    align-items: center; */
+}
+
+.bg-color {
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  background: rgba(209, 90, 175, 0.084) ;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.form-container {
+  border-radius: 8px;
+  box-shadow: 0 0 60px rgba(255, 102, 196, 0.3);
+  padding: 20px;
+  /* Adjust as needed */
+  background-color: #ffffff;
+  /* Adjust as needed */
+}
+
+
+.spinner-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  /* Adjust blur intensity as needed */
+  z-index: 9999;
+  /* Ensure it's always on top */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  color: #d61919b6;
+}
+
+.mat-spinner {
+  width: 25px;
+  /* Set the width to match the diameter */
+  height: 25px;
+  /* Set the height to match the diameter */
+}
