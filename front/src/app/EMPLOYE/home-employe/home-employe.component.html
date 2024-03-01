@@ -1,0 +1,26 @@
+<div class="form-container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Service</th>
+        <th>Date</th>
+        <th>Appointment Time</th>
+        <th>Employee Name</th>
+        <th>Note</th>
+        <th>Price</th>
+        <th>Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let appointment of appointmentHistory">
+        <td>{{ appointment.service }}</td>
+        <td>{{ appointment.date }}</td>
+        <td>{{ appointment.appointmentTime }}</td>
+        <td>{{ appointment.employeeName }}</td>
+        <td>{{ appointment.note }}</td>
+        <td>{{ appointment.price }}</td>
+        <td>{{ appointment.duration }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

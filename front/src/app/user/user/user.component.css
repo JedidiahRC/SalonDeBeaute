@@ -1,16 +1,28 @@
 .centered-container {
+  margin-top: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   /* Adjust this according to your layout */
 }
-
 .form-container {
   border-radius: 8px;
-  box-shadow: 0 0 20px rgba(255, 102, 196 ,0.8);
+  box-shadow: 0 0 60px rgba(255, 102, 196 ,0.8);
   padding: 20px;
   /* Adjust as needed */
   background-color: #ffffff;
   /* Adjust as needed */
+}
+.bg-color{
+  background-color: rgb(25, 20, 20);
+}
+h1{
+  color: white;
+}
+.containerWrap{
+  width: 100%;
+  height: 100vh;
+  border-radius: 8px !important;
+  margin: 0px;
+  padding: 20px;
 }

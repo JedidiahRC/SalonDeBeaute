@@ -1,0 +1,47 @@
+<div class="containerWrap bg-color">
+  <div class="centered-container">
+    <h1 style="color: rgba(255, 102, 196, 0.8)">Login</h1>
+    <div class="form-container">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Email address</label
+          >
+          <input
+            type="email"
+            formControlName="email"
+            value="salon@gmail.com"
+            class="form-control"
+            id="exampleInputEmail1"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input
+            type="password"
+            formControlName="password"
+            value="123456"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+        </div>
+
+        <!-- *ngIf="!isLoading" -->
+        <button
+          type="submit"
+          [disabled]="loginForm.invalid"
+          class="btn btn-sm btn-primary"
+          style="height: 40px; /* Adjust as needed */"
+        >
+          <div class="row">
+            <div class="col">Login</div>
+            <div class="col" *ngIf="isLoading">
+              <mat-spinner diameter="25"></mat-spinner>
+            </div>
+          </div>
+        </button>
+      </form>
+      <a class="btn btn-navbar" routerLink="/add-user">SIGN UP</a>
+    </div>
+  </div>
+</div>

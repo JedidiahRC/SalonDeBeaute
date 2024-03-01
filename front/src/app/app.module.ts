@@ -1,8 +1,10 @@
+import { HomeEmployeComponent } from './EMPLOYE/home-employe/home-employe.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatIconModule } from '@angular/material/icon';
 import { UserComponent } from './user/user/user.component';
 import { PersonelComponent } from './user/personel/personel.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -10,28 +12,47 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { TestsComponent } from './tests/tests.component';
 import { LoginComponent } from './login/login.component';
-import { ServicesComponent } from './services/services.component';
+import { ServicesComponent } from './MANAGER/services/services.component';
+import { ServiceComponent } from './CLIENT/service/service.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { EmployesComponent } from './employes/employes.component';
-// import { MatFormFieldModule } from '@angular/material/form-field';
+import { EmployesComponent } from './MANAGER/employes/employes.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 
+import { MatCardModule } from '@angular/material/card';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { AppRoutingModule } from './app-routing.module';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import {
+  NgxMatDatetimePickerModule,
+  NgxMatTimepickerModule,
+} from '@angular-material-components/datetime-picker';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSliderModule } from '@angular/material/slider';
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 
-const routes: Routes = [
-  { path: 'admin',
-  component: AdminComponent,
-  children: [
-      { path: 'adduser', component: UserComponent },
-      { path: 'loginUser', component: LoginComponent },
-      { path: 'addEmploye', component: EmployesComponent },
-
-    ]
-},
-  // Add other routes as needed
-];
+import { AuthErrorDialogComponent } from './auth-error-dialog/auth-error-dialog.component';
+import { AccueilComponent } from './accueil/accueil.component';
+// import { AppointmentsComponent } from './appointments/appointments.component';
+import { AppointmentComponent } from './CLIENT/appointment/appointment.component';
+import { ConnectionComponent } from './CLIENT/connection/connection.component';
+import { ClientNavbarComponent } from './CLIENT/navbarClient/client-navbar.component';
+import { HomeComponent } from './CLIENT/home/home.component';
+import { NavbarManagerComponent } from './MANAGER/navbar-manager/navbar-manager.component';
+import { ConnectionManagerComponent } from './MANAGER/connection-manager/connection-manager.component';
+import { HomeManagerComponent } from './MANAGER/home-manager/home-manager.component';
+import { NavbarEmployeComponent } from './EMPLOYE/navbar-employe/navbar-employe.component';
+import { ProfilEmployeComponent } from './EMPLOYE/profil-employe/profil-employe.component';
+import { LoginEmployeComponent } from './EMPLOYE/login-employe/login-employe.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -41,24 +62,53 @@ const routes: Routes = [
     AdminComponent,
     TestsComponent,
     LoginComponent,
+    ServiceComponent,
+    UserComponent,
+    EmployesComponent,
+    AccueilComponent,
+    AuthErrorDialogComponent,
+    ConnectionComponent,
+    HomeComponent,
     ServicesComponent,
-    EmployesComponent
+    NavbarManagerComponent,
+    AppointmentComponent,
+    HomeManagerComponent,
+    ConnectionManagerComponent,
+    ClientNavbarComponent,
+    HomeEmployeComponent,
+    NavbarEmployeComponent,
+    ProfilEmployeComponent,
+    LoginEmployeComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     NgbModule,
-    RouterModule.forRoot(routes),
     ReactiveFormsModule,
     MatSlideToggleModule,
     BrowserAnimationsModule,
     MatInputModule,
-    FormsModule
+    MatIconModule,
+    FormsModule,
+    MatOptionModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    AppRoutingModule,
+    MatSliderModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatProgressSpinnerModule,
+    TimepickerModule.forRoot(),
+    NgxMatTimepickerModule,
+    NgxMatDatetimePickerModule,
+    NgxMaterialTimepickerModule,
+    NgxSpinnerModule,
   ],
-  exports: [
-    RouterModule
-  ],
+  exports: [RouterModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

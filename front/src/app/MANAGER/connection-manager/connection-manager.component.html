@@ -1,0 +1,43 @@
+<div class="containerWrap bg-color">
+  <div class="centered-container">
+    <h1 style="color: rgba(255, 102, 196, 0.8)">Login Manager</h1>
+    <div class="form-container">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Email address</label
+          >
+          <input
+            type="email"
+            formControlName="email"
+            class="form-control"
+            id="exampleInputEmail1"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input
+            type="password"
+            formControlName="password"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+        </div>
+        <mat-spinner
+          diameter="25"
+          *ngIf="isLoading"
+          color="white"
+        ></mat-spinner>
+        <button
+          *ngIf="!isLoading"
+          type="submit"
+          [disabled]="loginForm.invalid"
+          class="btn btn-sm btn-primary"
+          style="height: 40px; /* Adjust as needed */"
+        >
+          Login
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
