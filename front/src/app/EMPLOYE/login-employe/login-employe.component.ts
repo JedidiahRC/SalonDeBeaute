@@ -23,7 +23,7 @@ export class LoginEmployeComponent implements OnInit {
     private dialog: MatDialog
   ) {
     this.loginForm = this.formBuilder.group({
-      email: ['Mike@gmail.com', [Validators.required, Validators.email]],
+      email: ['sasha@gmail.com', [Validators.required, Validators.email]],
       password: ['123456', Validators.required],
     });
   }

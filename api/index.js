@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const nodemailer = require("nodemailer");
 require("dotenv").config();
 
 const setupRoutes1 = require("./routes1");
@@ -12,6 +13,7 @@ const authRoutes = require("./src/routes/authRoutes");
 const employeRoutes = require("./src/routes/employeRoutes");
 const serviceRoutes = require("./src/routes/serviceRoutes");
 const cors = require("cors");
+const Employes = require("./src/models/Employes");
 
 app.use(bodyParser.json());
 

@@ -13,6 +13,7 @@ export class UserComponent {
   test: Date = new Date();
   focus: any;
   focus1: any;
+  http: any;
 
   constructor(
     private fb: FormBuilder,
@@ -41,6 +42,18 @@ export class UserComponent {
         },
         (error) => {
           console.error('Error submitting form:', error);
+        }
+      );
+    }
+    if (this.signupForm.valid) {
+      this.http.post('/sendEmail', this.signupForm.value).subscribe(
+        (response: any) => {
+          console.log('Email sent successfully:', response);
+          // You can handle success here (e.g., show a success message to the user)
+        },
+        (error: any) => {
+          console.error('Error sending email:', error);
+          // You can handle errors here (e.g., show an error message to the user)
         }
       );
     }

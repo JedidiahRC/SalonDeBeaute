@@ -1,5 +1,7 @@
 const Appointment = require("../models/Appointments");
 
+const nodemailer = require("nodemailer");
+
 exports.createAppointment = async (req, res) => {
   console.log("Launching saveAppointment");
   console.log(req.body);
@@ -18,6 +20,48 @@ exports.createAppointment = async (req, res) => {
       clientName: req.body.clientName,
       clientEmail: req.body.clientEmail,
     });
+
+    process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "andryanony08@gmail.com",
+        pass: "jqupfetjgjtuxnju",
+      },
+      tls: {
+        rejectUnauthorized: false, // Bypass SSL verification
+      },
+    });
+
+    const { service, price, appointmentTime, date, duration, employe } =
+      req.body;
+    const clientName = req.body.clientName;
+    const clientEmail = req.body.clientEmail;
+
+    const mailOptions = {
+      from: "andryanony08@gmail.com",
+      to: clientEmail,
+      subject: `Good Morning Mrs.M. ${clientName}, these are your appointment details at Beauty'full Beauty Salon`,
+      text: `
+    The service you have choosen: ${service}
+    Price of it: ${price} MGA
+    Your Appointment Time: ${date} - ${appointmentTime}
+    Duration of it: ${duration} h
+    The employee you have choosen: ${employe}
+  `,
+    };
+
+    transporter.sendMail(mailOptions, function (error, info) {
+      if (error) {
+        console.log("Ato anaty erreur");
+        console.log(error);
+      } else {
+        console.log("Email sent: " + info.response);
+      }
+    });
+
+    console.log(req.body.clientEmail);
+
     console.log("saving appointments");
     const savedAppointment = await appointment.save();
     res.status(201).json(savedAppointment);
