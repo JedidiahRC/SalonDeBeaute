@@ -1,5 +1,5 @@
 const signupRoutes = require("./src/routes/signupRoutes");
-const authRoutes = require("./src/routes/authRoutes");
+const authRoutes = require("./src/routes/authroutes");
 const appointmentRoutes = require("./src/routes/appointmentRoutes");
 
 function setupRoutes1(app) {
