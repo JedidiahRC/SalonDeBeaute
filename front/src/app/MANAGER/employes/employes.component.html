@@ -1,88 +1,154 @@
-<div class="container bg-color">
-    <h1 class="text-center mt-5">ADD EMPLOYED</h1>
+<div class="containerWrap bg-color">
+  <div class="centered-container">
+    <h1 class="text-center mt-3 mb-5">ADD EMPLOYED</h1>
     <div class="centered-container">
       <div class="form-container">
-      <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
-
-
-        <div class="mb-3">
-          <div class="row">
-            <div class="col">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" formControlName="name" class="form-control" id="name">
-              <div *ngIf="employeeForm.get('name')?.errors?.['required'] && employeeForm.get('name')?.touched">First
-                Name is required</div>
-            </div>
-            <div class="col">
-              <label for="email" class="form-label">Email</label>
-              <input type="text" formControlName="email" class="form-control" id="email">
-              <div *ngIf="employeeForm.get('email')?.errors?.['required'] && employeeForm.get('email')?.touched">Last Name
-                is required</div>
-            </div>
-          </div> 
-        </div>
-
-        <div class="mb-3">
-          <div class="row">
-            <div class="col">
-              <label for="password" class="form-label">Password</label>
-              <input type="password" formControlName="password" class="form-control" id="password">
-              <div *ngIf="employeeForm.get('password')?.errors?.['required'] && employeeForm.get('password')?.touched">Password is
-                required</div>
-              <label for="adresse" class="form-label">Adresse</label>
-              <input type="text" formControlName="adresse" class="form-control" id="adresse">
-              <div *ngIf="employeeForm.get('adresse')?.errors?.['required'] && employeeForm.get('adresse')?.touched">Adresse is
-                required</div>
+        <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <div class="row">
+              <div class="col">
+                <label for="name" class="form-label">Name</label>
+                <input
+                  type="text"
+                  formControlName="name"
+                  class="form-control"
+                  id="name"
+                />
+                <div
+                  *ngIf="employeeForm.get('name')?.errors?.['required'] && employeeForm.get('name')?.touched"
+                >
+                  First Name is required
+                </div>
+              </div>
+              <div class="col">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="text"
+                  formControlName="email"
+                  class="form-control"
+                  id="email"
+                />
+                <div
+                  *ngIf="employeeForm.get('email')?.errors?.['required'] && employeeForm.get('email')?.touched"
+                >
+                  Last Name is required
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="mb-3">
-          <label for="contact" class="form-label">contact</label>
-          <input type="text" formControlName="contact" class="form-control" id="contact">
-          <div *ngIf="employeeForm.get('contact')?.errors?.['required'] && employeeForm.get('contact')?.touched">Contact is
-            required</div>
-        </div>
-        
-        <div class="mb-3">
-          <label for="specialite" class="form-label">specialite</label>
-          <select formControlName="specialite" class="form-select" id="specialite">
-            <option value="Skin care">Skin care</option>
-            <option value="Hair">Hair</option>
-            <option value="Nail care">Nail care</option>
-            <option value="Massage">Massage</option>
-          </select>
-     <div *ngIf="employeeForm.get('specialite')?.errors?.['required'] && employeeForm.get('specialite')?.touched">specialite is
-      required</div>
-       </div>
+          <div class="mb-3">
+            <div class="row">
+              <div class="col">
+                <label for="password" class="form-label">Password</label>
+                <input
+                  type="password"
+                  formControlName="password"
+                  class="form-control"
+                  id="password"
+                />
+                <div
+                  *ngIf="employeeForm.get('password')?.errors?.['required'] && employeeForm.get('password')?.touched"
+                >
+                  Password is required
+                </div>
+                <label for="adresse" class="form-label">Adresse</label>
+                <input
+                  type="text"
+                  formControlName="adresse"
+                  class="form-control"
+                  id="adresse"
+                />
+                <div
+                  *ngIf="employeeForm.get('adresse')?.errors?.['required'] && employeeForm.get('adresse')?.touched"
+                >
+                  Adresse is required
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <div class="mb-3">
-          <label for="horaire" class="form-label">horaire</label>
-          <input type="text" formControlName="horaire" class="form-control" id="horaire">
-          <div *ngIf="employeeForm.get('horaire')?.errors?.['required'] && employeeForm.get('horaire')?.touched">horaire is
-            required</div>
-        </div>
+          <div class="mb-3">
+            <label for="contact" class="form-label">contact</label>
+            <input
+              type="text"
+              formControlName="contact"
+              class="form-control"
+              id="contact"
+            />
+            <div
+              *ngIf="employeeForm.get('contact')?.errors?.['required'] && employeeForm.get('contact')?.touched"
+            >
+              Contact is required
+            </div>
+          </div>
 
-        <div class="mb-3">
-          <label for="salaire" class="form-label">salaire</label>
-          <input type="text" formControlName="salaire" class="form-control" id="salaire">
-          <div *ngIf="employeeForm.get('salaire')?.errors?.['required'] && employeeForm.get('salaire')?.touched">salaire is
-            required</div>
-        </div>
+          <div class="mb-3">
+            <label for="specialite" class="form-label">specialite</label>
+            <select
+              formControlName="specialite"
+              class="form-select"
+              id="specialite"
+            >
+              <option value="Skin care">Skin care</option>
+              <option value="Hair">Hair</option>
+              <option value="Nail care">Nail care</option>
+              <option value="Massage">Massage</option>
+            </select>
+            <div
+              *ngIf="employeeForm.get('specialite')?.errors?.['required'] && employeeForm.get('specialite')?.touched"
+            >
+              specialite is required
+            </div>
+          </div>
 
-        <div class="mb-3">
-          <label for="statut" class="form-label">statut</label>
-          <select formControlName="statut" class="form-select" id="statut">
-            <option value="Active">Active</option>
-            <option value="Vacation">Vacation</option>
-            <option value="Suspended">Suspended</option>
-          </select>
-          <div *ngIf="employeeForm.get('statut')?.errors?.['required'] && employeeForm.get('statut')?.touched">statut is
-            required</div>
-        </div>
-        
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    </div>
+          <div class="mb-3">
+            <label for="horaire" class="form-label">horaire</label>
+            <input
+              type="text"
+              formControlName="horaire"
+              class="form-control"
+              id="horaire"
+            />
+            <div
+              *ngIf="employeeForm.get('horaire')?.errors?.['required'] && employeeForm.get('horaire')?.touched"
+            >
+              horaire is required
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="salaire" class="form-label">salaire</label>
+            <input
+              type="text"
+              formControlName="salaire"
+              class="form-control"
+              id="salaire"
+            />
+            <div
+              *ngIf="employeeForm.get('salaire')?.errors?.['required'] && employeeForm.get('salaire')?.touched"
+            >
+              salaire is required
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="statut" class="form-label">statut</label>
+            <select formControlName="statut" class="form-select" id="statut">
+              <option value="Active">Active</option>
+              <option value="Vacation">Vacation</option>
+              <option value="Suspended">Suspended</option>
+            </select>
+            <div
+              *ngIf="employeeForm.get('statut')?.errors?.['required'] && employeeForm.get('statut')?.touched"
+            >
+              statut is required
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
     </div>
   </div>
+</div>
